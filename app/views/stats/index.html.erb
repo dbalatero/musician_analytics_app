@@ -1,1 +1,36 @@
 <h1>Stats</h1>
+
+<p>Basic, crappy stats!</p>
+
+<p>Today's date is <%= Time.now.strftime("%m/%d/%Y") -%>.</p>
+
+<!-- omg web 0.1 -->
+<table border="1" cellpadding="2" cellspacing="0">
+  <thead>
+    <tr>
+      <th rowspan="2" align="center">Date</th>
+      <th align="center" colspan="2">Last.fm</th>
+      <th align="center" colspan="2">Twitter</th>
+      <th align="center">Myspace</th>
+    </tr>
+    <tr>
+      <th>Plays</th>
+      <th>Listeners</th>
+      <th>Followers</th>
+      <th>Friends</th>
+      <th>Profile Views</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for stat in @stats -%>
+    <tr>
+      <td align="center"><%= stat.created_at.strftime("%m/%d/%Y") -%></td>
+      <td align="center"><%= stat.lastfm_playcount -%></td>
+      <td align="center"><%= stat.lastfm_listeners -%></td>
+      <td align="center"><%= stat.twitter_followers -%></td>
+      <td align="center"><%= stat.twitter_friends -%></td>
+      <td align="center"><%= stat.myspace_profile_views -%></td>
+    </tr>
+  <% end -%>
+  </tbody>
+</table>
