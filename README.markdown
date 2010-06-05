@@ -38,6 +38,10 @@ Navigate to your new Heroku site, and create the shared admin account for your b
 
     http://my-goofy-subdomain.heroku.com
 
+Gather one data point, to test:
+
+    heroku rake cron
+
 *Finally*, watch this repository and subscribe via RSS so you can get new updates. Also, follow [@operationid](http://twitter.com/operationid) on Twitter for updates, if you prefer that over RSS.
 
 Todo
