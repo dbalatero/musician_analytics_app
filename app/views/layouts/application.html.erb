@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Stats for <%= $simple_config.accounts.last_fm.artist_name -%></title>
+</head>
+<body>
+  <% if logged_in? -%>
+  <p>
+    <strong>Logged in as: <%= current_user.login -%></strong> 
+    <%= link_to 'Logout', logout_path -%>
+  </p>
+  <hr />
+  <% end -%>
+  <% if flash[:error] -%>
+    <div class="error"><%= flash[:error] -%></div>
+  <% end -%>
+  <%= yield -%>
+</body>
+</html>
