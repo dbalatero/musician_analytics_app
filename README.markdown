@@ -48,3 +48,11 @@ Todo
 * Make gathering stats on each service optional.
 * Make the stats page not look like dookie. Use Google Graphs?
 * Gather more interesting stats?
+
+Credits / Shameless Promotion
+-----------------------------
+
+Written by David Balatero <contact@opidmusic.com>, licensed under MIT.
+http://opidmusic.com
+Twitter: @operationid
+Facebook: http://facebook.com/operationid
