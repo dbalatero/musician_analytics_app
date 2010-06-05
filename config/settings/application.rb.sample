@@ -1,0 +1,14 @@
+group :accounts do
+  group :last_fm do
+    set :api_key, 'apikeyhere'
+    set :artist_name, 'Operation ID'
+  end
+
+  group :twitter do
+    set :username, 'operationid'
+  end
+
+  group :myspace do
+    set :username, 'operationid'
+  end
+end
