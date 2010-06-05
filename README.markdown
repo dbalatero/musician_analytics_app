@@ -3,7 +3,15 @@ musician\_analytics\_app
 
 This Rails app is meant to be a quick deploy to Heroku to start gathering free daily stats about your band. Setup is real easy.
 
+The goal of this app is to allow you to see your band's growth patterns across various social networks in one interface. Supported so far:
+
+* Last.fm
+* Twitter
+* Myspace
+
 Stats gathering is done by my [musician_analytics](http://github.com/dbalatero/musician_analytics) gem. I'd love feedback on both these projects!
+
+The UI is pretty thrown together at this point, but that will evolve over time.
 
 "It's easy, dummy."
 -------------------
