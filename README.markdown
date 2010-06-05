@@ -3,9 +3,7 @@ musician\_analytics\_app
 
 This Rails app is meant to be a quick deploy to Heroku to start gathering free daily stats about your band. Setup is real easy.
 
-If you don't want to use Heroku, then...
-
-...wait, why don't you? It's easy, dummy.
+Stats gathering is done by my [musician_analytics](http://github.com/dbalatero/musician_analytics) gem. I'd love feedback on both these projects!
 
 "It's easy, dummy."
 -------------------
