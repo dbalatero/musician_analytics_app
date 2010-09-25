@@ -1,36 +1,169 @@
-<h1>Stats</h1>
+<h1>Stats for <%= $simple_config.accounts.last_fm.artist_name -%></h1>
 
-<p>Basic, crappy stats!</p>
+<% if @stats.empty? -%>
+  <p>No data has been collected yet!</p>
+<% else -%>
 
-<p>Today's date is <%= Time.now.strftime("%m/%d/%Y") -%>.</p>
+  <script type="text/javascript">
+    function show(elem) {
+      $$('.chart').each(function(elem){ elem.style.display = 'none'});
+      $(elem).toggle();
+    }
+  </script>
+  
+  <div class="jump_links">
+    <ul>
+      <li><em>Show:</em></li>
+      <li><a href="javascript:show('lastfm_listeners');">Last.fm Listeners</a> |</li>
+      <li><a href="javascript:show('lastfm_playcount');">Last.fm Play Count</a> |</li>
+      <li><a href="javascript:show('myspace_profile_views');">MySpace Profile Views</a> |</li>
+      <li><a href="javascript:show('twitter_followers');">Twitter Followers</a> |</li>
+      <li><a href="javascript:show('twitter_friends');">Twitter Friends</a></li>
+    </ul>
+  </div>
+  
+  <br style="clear: both;" /><br /><br />
+  
+  <div id="lastfm_listeners" class="chart" style="display:block;"></div>
+  <div id="lastfm_playcount" class="chart" style="display:none;"></div>
+  <div id="myspace_profile_views" class="chart" style="display:none;"></div>
+  <div id="twitter_followers" class="chart" style="display:none;"></div>
+  <div id="twitter_friends" class="chart" style="display:none;"></div>
+  
+  <%= Seer::visualize(
+      @stats_series,
+      :as => :line_chart,
+      :in_element => 'lastfm_listeners',
+      :series => {
+        :series_label => 'Listeners',
+        :data_label => 'date',
+        :data_method => 'count',
+        :data_series => [@stats_series.map{|s| s.datum(:lastfm_listeners)}]
+      },
+      :chart_options => {
+        :height => 300,
+        :width => 950,
+        :axis_font_size => 11,
+        :colors => ['#7e7587','#990000','#009900'],
+        :title => "Last.fm Listeners",
+        :point_size => 5,
+        :legend => 'none'
+      }
+     )
+   -%>
 
-<!-- omg web 0.1 -->
-<table border="1" cellpadding="2" cellspacing="0">
-  <thead>
-    <tr>
-      <th rowspan="2" align="center">Date</th>
-      <th align="center" colspan="2">Last.fm</th>
-      <th align="center" colspan="2">Twitter</th>
-      <th align="center">Myspace</th>
-    </tr>
-    <tr>
-      <th>Plays</th>
-      <th>Listeners</th>
-      <th>Followers</th>
-      <th>Friends</th>
-      <th>Profile Views</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% for stat in @stats -%>
-    <tr>
-      <td align="center"><%= stat.created_at.strftime("%m/%d/%Y") -%></td>
-      <td align="center"><%= stat.lastfm_playcount -%></td>
-      <td align="center"><%= stat.lastfm_listeners -%></td>
-      <td align="center"><%= stat.twitter_followers -%></td>
-      <td align="center"><%= stat.twitter_friends -%></td>
-      <td align="center"><%= stat.myspace_profile_views -%></td>
-    </tr>
-  <% end -%>
-  </tbody>
-</table>
+  <%= Seer::visualize(
+      @stats_series, 
+      :as => :line_chart,
+      :in_element => 'lastfm_playcount',
+      :series => {
+        :series_label => 'Playcount',
+        :data_label => 'date',
+        :data_method => 'count',
+        :data_series => [@stats_series.map{|s| s.datum(:lastfm_playcount)}]
+      },
+      :chart_options => { 
+        :height => 300,
+        :width => 950,
+        :axis_font_size => 11,
+        :colors => ['#7e7587','#990000','#009900'],
+        :title => "Last.fm Playcount",
+        :point_size => 5,
+        :legend => 'none'
+      }
+     )
+  -%>
+
+  <%= Seer::visualize(
+      @stats_series,
+      :as => :line_chart,
+      :in_element => 'myspace_profile_views',
+      :series => {
+        :series_label => 'Views',
+        :data_label => 'date',
+        :data_method => 'count',
+        :data_series => [@stats_series.map{|s| s.datum(:myspace_profile_views)}]
+      },
+      :chart_options => {
+        :height => 300,
+        :width => 950,
+        :axis_font_size => 11,
+        :colors => ['#7e7587','#990000','#009900'],
+        :title => "MySpace Profile Views",
+        :point_size => 5,
+        :legend => 'none'
+      }
+     )
+  -%>
+
+  <%= Seer::visualize(
+      @stats_series,
+      :as => :line_chart,
+      :in_element => 'twitter_followers',
+      :series => {
+        :series_label => 'Twitter Followers',
+        :data_label => 'date',
+        :data_method => 'count',
+        :data_series => [@stats_series.map{|s| s.datum(:twitter_followers)}]
+      },
+      :chart_options => {
+        :height => 300,
+        :width => 950,
+        :axis_font_size => 11,
+        :colors => ['#7e7587','#990000','#009900'],
+        :title => "Twitter Followers",
+        :point_size => 5,
+        :legend => 'none'
+      }
+     )
+   -%>
+
+  <%= Seer::visualize(
+      @stats_series,
+      :as => :line_chart,
+      :in_element => 'twitter_friends',
+      :series => {
+        :series_label => 'Twitter Friends',
+        :data_label => 'date',
+        :data_method => 'count',
+        :data_series => [@stats_series.map{|s| s.datum(:twitter_friends)}]
+      },
+      :chart_options => { 
+        :height => 300,
+        :width => 950,
+        :axis_font_size => 11,
+        :colors => ['#7e7587','#990000','#009900'],
+        :title => "Twitter Friends",
+        :point_size => 5,
+        :legend => 'none'
+      }
+     )
+ -%>
+
+  <table class="standard">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Last.fm Plays</th>
+        <th>Last.fm Listeners</th>
+        <th>Twitter Followers</th>
+        <th>Twitter Friends</th>
+        <th>MySpaceProfile Views</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @stats.each do |stat| -%>
+      <tr class="<%= cycle('odd', 'even') -%>">
+        <td align="center"><%= stat.date -%></td>
+        <td align="center"><%= stat.lastfm_playcount.to_i -%></td>
+        <td align="center"><%= stat.lastfm_listeners.to_i -%></td>
+        <td align="center"><%= stat.twitter_followers.to_i -%></td>
+        <td align="center"><%= stat.twitter_friends.to_i -%></td>
+        <td align="center"><%= stat.myspace_profile_views.to_i -%></td>
+      </tr>
+    <% end -%>
+    </tbody>
+  </table>
+  
+<% end -%>
+
