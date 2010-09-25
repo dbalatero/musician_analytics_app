@@ -26,115 +26,119 @@
 <div id="twitter_followers" class="chart" style="display:none;"></div>
 <div id="twitter_friends" class="chart" style="display:none;"></div>
 
-<%= Seer::visualize(
-      @stats,
-      :as => :line_chart,
-      :in_element => 'twitter_followers',
-      :series => {
-        :series_label => 'Twitter Followers',
-        :data_label => 'date',
-        :data_method => 'count',
-        :data_series => [@stats.map{|s| s.datum(:twitter_followers)}]
-      },
-      :chart_options => { 
-        :height => 300,
-        :width => 950,
-        :axis_font_size => 11,
-        :colors => ['#7e7587','#990000','#009900'],
-        :title => "Twitter Followers",
-        :point_size => 5,
-        :legend => 'none'
-      }
-     )
- -%>
+<% if @stats.empty? -%>
+  <p>No data has been collected yet!</p>
+<% else -%>
+  <%= Seer::visualize(
+        @stats,
+        :as => :line_chart,
+        :in_element => 'twitter_followers',
+        :series => {
+          :series_label => 'Twitter Followers',
+          :data_label => 'date',
+          :data_method => 'count',
+          :data_series => [@stats.map{|s| s.datum(:twitter_followers)}]
+        },
+        :chart_options => {
+          :height => 300,
+          :width => 950,
+          :axis_font_size => 11,
+          :colors => ['#7e7587','#990000','#009900'],
+          :title => "Twitter Followers",
+          :point_size => 5,
+          :legend => 'none'
+        }
+       )
+   -%>
 
-<%= Seer::visualize(
-      @stats,
-      :as => :line_chart,
-      :in_element => 'twitter_friends',
-      :series => {
-        :series_label => 'Twitter Friends',
-        :data_label => 'date',
-        :data_method => 'count',
-        :data_series => [@stats.map{|s| s.datum(:twitter_friends)}]
-      },
-      :chart_options => { 
-        :height => 300,
-        :width => 950,
-        :axis_font_size => 11,
-        :colors => ['#7e7587','#990000','#009900'],
-        :title => "Twitter Friends",
-        :point_size => 5,
-        :legend => 'none'
-      }
-     )
- -%>
+  <%= Seer::visualize(
+        @stats,
+        :as => :line_chart,
+        :in_element => 'twitter_friends',
+        :series => {
+          :series_label => 'Twitter Friends',
+          :data_label => 'date',
+          :data_method => 'count',
+          :data_series => [@stats.map{|s| s.datum(:twitter_friends)}]
+        },
+        :chart_options => { 
+          :height => 300,
+          :width => 950,
+          :axis_font_size => 11,
+          :colors => ['#7e7587','#990000','#009900'],
+          :title => "Twitter Friends",
+          :point_size => 5,
+          :legend => 'none'
+        }
+       )
+   -%>
 
-<%= Seer::visualize(
-      @stats, 
-      :as => :line_chart,
-      :in_element => 'lastfm_playcount',
-      :series => {
-        :series_label => 'Playcount',
-        :data_label => 'date',
-        :data_method => 'count',
-        :data_series => [@stats.map{|s| s.datum(:lastfm_playcount)}]
-      },
-      :chart_options => { 
-        :height => 300,
-        :width => 950,
-        :axis_font_size => 11,
-        :colors => ['#7e7587','#990000','#009900'],
-        :title => "Last.fm Playcount",
-        :point_size => 5,
-        :legend => 'none'
-      }
-     )
- -%>
+  <%= Seer::visualize(
+        @stats, 
+        :as => :line_chart,
+        :in_element => 'lastfm_playcount',
+        :series => {
+          :series_label => 'Playcount',
+          :data_label => 'date',
+          :data_method => 'count',
+          :data_series => [@stats.map{|s| s.datum(:lastfm_playcount)}]
+        },
+        :chart_options => { 
+          :height => 300,
+          :width => 950,
+          :axis_font_size => 11,
+          :colors => ['#7e7587','#990000','#009900'],
+          :title => "Last.fm Playcount",
+          :point_size => 5,
+          :legend => 'none'
+        }
+       )
+   -%>
 
-<%= Seer::visualize(
-      @stats, 
-      :as => :line_chart,
-      :in_element => 'lastfm_listeners',
-      :series => {
-        :series_label => 'Listeners',
-        :data_label => 'date',
-        :data_method => 'count',
-        :data_series => [@stats.map{|s| s.datum(:lastfm_listeners)}]
-      },
-      :chart_options => { 
-        :height => 300,
-        :width => 950,
-        :axis_font_size => 11,
-        :colors => ['#7e7587','#990000','#009900'],
-        :title => "Last.fm Listeners",
-        :point_size => 5,
-        :legend => 'none'
-      }
-     )
- -%>
+  <%= Seer::visualize(
+        @stats,
+        :as => :line_chart,
+        :in_element => 'lastfm_listeners',
+        :series => {
+          :series_label => 'Listeners',
+          :data_label => 'date',
+          :data_method => 'count',
+          :data_series => [@stats.map{|s| s.datum(:lastfm_listeners)}]
+        },
+        :chart_options => {
+          :height => 300,
+          :width => 950,
+          :axis_font_size => 11,
+          :colors => ['#7e7587','#990000','#009900'],
+          :title => "Last.fm Listeners",
+          :point_size => 5,
+          :legend => 'none'
+        }
+       )
+   -%>
 
-<%= Seer::visualize(
-      @stats, 
-      :as => :line_chart,
-      :in_element => 'myspace_profile_views',
-      :series => {
-        :series_label => 'Views',
-        :data_label => 'date',
-        :data_method => 'count',
-        :data_series => [@stats.map{|s| s.datum(:myspace_profile_views)}]
-      },
-      :chart_options => { 
-        :height => 300,
-        :width => 950,
-        :axis_font_size => 11,
-        :colors => ['#7e7587','#990000','#009900'],
-        :title => "MySpace Profile Views",
-        :point_size => 5,
-        :legend => 'none'
-      }
-     )
- -%>
+  <%= Seer::visualize(
+        @stats,
+        :as => :line_chart,
+        :in_element => 'myspace_profile_views',
+        :series => {
+          :series_label => 'Views',
+          :data_label => 'date',
+          :data_method => 'count',
+          :data_series => [@stats.map{|s| s.datum(:myspace_profile_views)}]
+        },
+        :chart_options => {
+          :height => 300,
+          :width => 950,
+          :axis_font_size => 11,
+          :colors => ['#7e7587','#990000','#009900'],
+          :title => "MySpace Profile Views",
+          :point_size => 5,
+          :legend => 'none'
+        }
+       )
+  -%>
+<% end -%>
 
 <table class="standard">
   <thead>
