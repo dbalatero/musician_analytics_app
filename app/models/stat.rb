@@ -1,7 +1,16 @@
 class Stat < ActiveRecord::Base
 
   named_scope :all, :order => 'created_at asc'
+  named_scope :for_date, lambda {|date| {:conditions => ['created_at >= ? AND created_at <= ?', Date.parse(date).beginning_of_day, Date.parse(date).end_of_day] } }
 
+  def self.uniq_by_date
+    _uniq = []
+    Stat.all.map{|s| s.created_at.strftime("%m/%d/%Y")}.uniq.each do |d|
+      _uniq << Stat.for_date(d).first    
+    end
+    _uniq
+  end
+  
   def date
     self.created_at.strftime("%m/%d/%Y")
   end
