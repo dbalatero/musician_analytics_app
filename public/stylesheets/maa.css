@@ -1,0 +1,291 @@
+/* @override 
+	http://localhost:3000/stylesheets/maa.css?1285364199
+	http://localhost:3000/stylesheets/maa.css?1285366828
+	http://localhost:3000/stylesheets/maa.css?1285367057
+	http://localhost:3000/stylesheets/maa.css?1285375988
+	http://localhost:3000/stylesheets/maa.css?1285376176
+*/
+
+/* 
+	--------------------------------
+	COLOR SCHEME
+	--------------------------------
+		purple: 			#7e7587
+		red: 				#793441
+		yellow: 			#827e38
+		green: 				#6b7c35
+		grey borders: 		#cccccc
+		grey backgrounds: 	#eeeeee
+	--------------------------------
+
+	--------------------------------
+	CHART COLORS
+	--------------------------------
+		blue:				#324F69
+		green:				#919E4B
+		red:				#A34D4D
+		tan:				#BEC8BE
+	--------------------------------
+
+*/
+
+/* @group General Typography */
+
+	html {
+		height: 100%;
+	}
+	
+	a:visited {
+  		color: #999999;
+	}
+	
+	body {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		min-width: 1030px;
+		font-family: Futura, Verdana, sans-serif;
+		background: #ffffff url(/images/layout/content_left_bg.png) repeat-y;
+	}
+
+	.bold {
+		font-weight: bold;
+	}
+	
+	h1 {
+		color: #333333;
+		margin-top: -15px;
+		padding-bottom: .5em;
+		margin-bottom: 2em;
+		width: 75%;
+		border-bottom: 1px dotted #cccccc;
+		font-size: 1.5em;
+	}
+
+/* @end */
+
+/* @group Layout Tricks */
+
+	div#container {
+		min-height: 100%;
+		position: relative;
+		background: url(/images/layout/content_right_bg.png) repeat-y right 0;
+}
+
+/* @end */
+
+
+/* @group Header */
+
+	div#header {
+		margin-top: 0em;
+		background: none;
+		background-color: #000000;
+		height: 10px;
+		background: url(/images/layout/black_bar.png) repeat-x top;
+		width: 100%;
+		border: none;
+	}
+	
+	div#page_header {
+		padding-top: 63px;
+		padding-left: 45px;
+	}
+	
+	div#branding {
+		position: absolute;
+		top: 0px;
+		right: 45px;
+		margin: 0em;
+		padding: 0em;
+		background: url(/images/layout/branding.png) no-repeat;
+		height: 90px;
+		width: 344px;
+	}
+
+/* @end */
+
+/* @group Content Area */
+
+	div#content_area {
+		padding: 50px 45px 35px 45px;
+		height: 100%;
+		font-size: 11px;
+	}
+
+/* @end */
+
+/* @group Footer */
+
+	div#footer {
+		position: absolute;
+		bottom: 0px;
+		height: 35px;
+		width: 100%;
+		padding: 0px;
+		margin: 0px !important;
+		background: url(/images/layout/black_bar.png) repeat-x bottom;
+		color: #aaaaaa;
+		border: none;
+		font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+		font-size: 11px;
+	}
+	
+	div#footer p {
+		margin: 11px 50px 0px 50px;
+	}
+
+	div#footer a:link, div#footer a:visited {
+		text-decoration: none;
+		color: #aaaaaa;
+	}
+	
+	div#footer a:hover {
+		text-decoration: underline;
+	}	
+	
+/* @end */
+
+
+/* @group Forms */
+	
+	.form_container {
+		background-color: #efefef;
+		border: 1px solid #dddddd;
+		padding: 1em 1em 1em 1em;
+		margin-top: 2.5em;
+		margin-bottom: .5em;
+		text-align: left;
+	}
+	
+	.button {
+		color: #555555 !important;
+		background-color: #cccccc;
+		border: 1px solid #aaaaaa;
+		background-image: url(../images/layout/button_bg.png);
+		font-size: 9px;
+	}
+
+	.button a:link {
+		color: #555555 !important;
+		cursor: pointer;
+	}
+	
+	.button a:visited {
+		color: #555555 !important;
+		cursor: pointer;
+	}
+	
+	.button a:visited {
+		color: #555555 !important;
+		cursor: pointer;
+	}
+	
+	.button:active {
+		background-color: #999999;
+		border: 1px solid #333333;
+		background-image: url(../images/layout/button_bg.png);
+	}
+	
+/* @end */
+
+/* @group Tables */
+
+	table {
+		border: 1px solid #aaaaaa !important;
+	}
+	
+	th {
+		/*background: #7e7587 !important;*/
+		font-size: .8em !important;
+		padding: .5em;
+	}
+	
+	td {
+		font-size: .8em;
+	}
+
+	table.standard tr:hover td, table.results tr:hover td {
+		background-color: #cccccc !important;
+	}
+
+	table.results tr.summary {
+		font-weight: bold;
+	}
+	
+	table.results tr td {
+		height: 3em;
+		vertical-align: top;
+	}
+	
+	table.standard td {
+	}
+	
+	table.standard td a:link, table.standard td a:visited {
+		text-decoration: none;
+	}
+	
+/* @end */
+
+/* @group Charts */
+
+	.chart {
+		border: 1px solid #cccccc;
+		margin-right: 1em;
+		margin-bottom: 2em;
+		text-align: center;
+		width: 100%;
+	}
+	
+
+/* @end */
+
+
+/* @group Components */
+
+	div.jump_links {
+		position: absolute;
+		color: #aaaaaa;
+		width: 91%;
+		text-align: left;
+		margin-top: 1em;
+	}
+	
+	.jump_links a:link, .jump_links a:visited {
+		color: #aaaaaa;
+		text-decoration: none;
+	}
+	
+	.jump_links ul {
+		display: inline;
+		float: left;
+	}
+	
+	.jump_links ul li {
+		float: left;
+		margin-left: .5em;
+	}
+		
+/* @end */
+
+
+/* @group Rails Overrides */
+
+	div#flash_error {
+		border: 1px solid #aaaaaa;
+		color: #660000;
+		padding: 1em;
+		background-color: #eeeeee;
+	}
+	
+	.errorExplanation h2 {
+		display: none;
+	}
+
+	.errorExplanation ul li {
+		margin-left: 1.5em;
+		list-style-type: disc;
+	}
+
+/* @end */
+	
