@@ -11,7 +11,7 @@ The goal of this app is to allow you to see your band's growth patterns across v
 
 Stats gathering is done by my [musician_analytics](http://github.com/dbalatero/musician_analytics) gem. I'd love feedback on both these projects!
 
-Awesome UI by [Bantik](http://twitter.com/dustandashadow)!
+Awesome UI by [Bantik](http://www.idolhands.com/)!
 
 "It's easy, dummy."
 -------------------
