@@ -1,0 +1,51 @@
+--- 
+dependencies: 
+  rails: 
+    group: 
+    - :default
+    version: = 2.3.5
+  authlogic: 
+    group: 
+    - :default
+    version: ">= 0"
+  musician_analytics: 
+    group: 
+    - :default
+    version: ">= 0"
+  seer: 
+    group: 
+    - :default
+    version: ">= 0"
+specs: 
+- rake: 
+    version: 0.8.7
+- activesupport: 
+    version: 2.3.5
+- rack: 
+    version: 1.0.1
+- actionpack: 
+    version: 2.3.5
+- actionmailer: 
+    version: 2.3.5
+- activerecord: 
+    version: 2.3.5
+- activeresource: 
+    version: 2.3.5
+- authlogic: 
+    version: 2.1.6
+- json: 
+    version: 1.4.6
+- typhoeus: 
+    version: 0.1.31
+- monster_mash: 
+    version: 0.1.4
+- musician_analytics: 
+    version: 0.1.0
+- rails: 
+    version: 2.3.5
+- seer: 
+    version: 0.9.1
+hash: 8102dc9685cf64eada925642bd7d1c43f6fa3b19
+sources: 
+- Rubygems: 
+    uri: http://gemcutter.org
